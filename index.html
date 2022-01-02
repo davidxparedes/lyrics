@@ -4,46 +4,39 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet"> 
-  <title>Lyrics API</title>
+  <title>Lyrics</title>
 </head>
-<body class="d-flex flex-column justify-content-center align-items-center">
+<body class="d-flex flex-column justify-content-center">
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
-        <h1 class="text-white">Lyrics API</h1>
-      </div>
-      <div class="col-md-6 d-flex justify-content-md-end align-items-end">
-        <p class="small text-white mb-2">Created at <a class="text-white" href="http://junocollege.com" target="_blank">Juno College</a></p>
+      <div class="col-12">
+        <h1 class="text-white">Lyrics</h1>
       </div>
     </div>
-
     <form class="row">
       <div class="col-sm-4 form-group">
         <label class="sr-only" for="artist">Artist</label>
         <input id="artist" class="form-control" placeholder="Artist" required>
       </div>
-
       <div class="col-sm-4 form-group">
         <label class="sr-only" for="song">Song</label>
         <input id="song" class="form-control" placeholder="Song" required>
       </div>
-
       <div class="col-sm-4 form-group">
-        <button type="submit" class="btn form-control">
-          Search
-        </button>
+        <button type="submit" class="btn form-control">Search</button>
       </div>
     </form>
+    <div class="row">
+      <div class="col">
+        <a id="recentSearchesToggle" class="text-white text-decoration-none collapsed d-none justify-content-center align-items-center py-3" data-toggle="collapse" href="#recentSearches" role="button" aria-expanded="false" aria-controls="recentSearches">Recent Searches <i class="fas fa-angle-up ml-3"></i></a>
+        <div class="collapse px-3" id="recentSearches"></div>
+      </div>
+    </div>
   </div>
 
-  
-  <!-- Modal -->
   <div class="modal fade" id="lyrics-modal" tabindex="-1" role="dialog" aria-labelledby="lyrics-modalTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content text-white">
@@ -54,14 +47,12 @@
               <h5 id="headingArtist" class="modal-title text-uppercase small"></h5>
             </div>
             <div class="col-2">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
           </div>
         </div>
         <div class="modal-body">
-          <div class="lyrics lead"></div>
+          <div class="lyrics lead font-weight-bold"></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn" data-dismiss="modal">Close</button>
@@ -70,32 +61,12 @@
     </div>
   </div>
 
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col">
-        <p class="text-center">
-          <a id="recentSearchesToggle" class="text-white text-decoration-none collapsed d-none justify-content-center align-items-center py-3" data-toggle="collapse" href="#recentSearches" role="button" aria-expanded="false" aria-controls="recentSearches">
-            Recent Searches <i class="fas fa-angle-up ml-3"></i>
-          </a>
-        </p>
-        <div class="collapse" id="recentSearches">
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="loader d-none">
     <i class="fas fa-music fa-9x"></i>
   </div>
-  
-
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2
-  +9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
   <script src="scripts.js"></script>
-
 </body>
 </html>
